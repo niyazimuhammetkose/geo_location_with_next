@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import ApplicationLogo from '@/components/ApplicationLogo'
 import Dropdown from '@/components/Dropdown'
 import Link from 'next/link'
@@ -34,6 +35,21 @@ const Navigation = ({ user }) => {
                                 href="/dashboard"
                                 active={usePathname() === '/dashboard'}>
                                 Dashboard
+                            </NavLink>
+                            <NavLink
+                                href="/maps"
+                                active={usePathname() === '/maps'}>
+                                Maps
+                            </NavLink>
+                            <NavLink
+                                href="/geo-location-list"
+                                active={usePathname() === '/geo-location-list'}>
+                                Geo Location List
+                            </NavLink>
+                            <NavLink
+                                href="/custom-api-request"
+                                active={usePathname() === '/custom-api-request'}>
+                                Custom Api Request
                             </NavLink>
                         </div>
                     </div>
@@ -109,6 +125,21 @@ const Navigation = ({ user }) => {
                             href="/dashboard"
                             active={usePathname() === '/dashboard'}>
                             Dashboard
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            href="/maps"
+                            active={usePathname() === '/maps'}>
+                            Maps
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            href="/geo-location-list"
+                            active={usePathname() === '/geo-location-list'}>
+                            Geo Location List
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            href="/custom-api-request"
+                            active={usePathname() === '/custom-api-request'}>
+                            Custom Api Request
                         </ResponsiveNavLink>
                     </div>
 
