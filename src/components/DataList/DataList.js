@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { fetchPaginatedData } from '@/services/apiService'
+import fetchPaginatedData from '@/services/apiService'
 import { Box, Container, Paper } from '@mui/material'
 import DataListTable from '@/components/DataList/DataListTable'
 import BasicSearch from '@/components/BasicSearch'

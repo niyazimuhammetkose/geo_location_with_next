@@ -37,14 +37,9 @@ const Navigation = ({ user }) => {
                                 Dashboard
                             </NavLink>
                             <NavLink
-                                href="/maps"
-                                active={usePathname() === '/maps'}>
-                                Maps
-                            </NavLink>
-                            <NavLink
-                                href="/geo-location-list"
-                                active={usePathname() === '/geo-location-list'}>
-                                Geo Location List
+                                href="/geo-location"
+                                active={usePathname() === '/geo-location'}>
+                                Geo Locations
                             </NavLink>
                             <NavLink
                                 href="/custom-api-request"
@@ -127,14 +122,9 @@ const Navigation = ({ user }) => {
                             Dashboard
                         </ResponsiveNavLink>
                         <ResponsiveNavLink
-                            href="/maps"
-                            active={usePathname() === '/maps'}>
-                            Maps
-                        </ResponsiveNavLink>
-                        <ResponsiveNavLink
-                            href="/geo-location-list"
-                            active={usePathname() === '/geo-location-list'}>
-                            Geo Location List
+                            href="/geo-location"
+                            active={usePathname() === '/geo-location'}>
+                            Geo Locations
                         </ResponsiveNavLink>
                         <ResponsiveNavLink
                             href="/custom-api-request"

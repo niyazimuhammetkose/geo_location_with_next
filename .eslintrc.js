@@ -30,7 +30,7 @@ module.exports = {
     },
     rules: {
         'import/prefer-default-export': 0,
-        'no-console': 'warn',
+        'no-console': 'off',
         'no-nested-ternary': 0,
         'no-underscore-dangle': 0,
         'no-unused-expressions': ['error', { allowTernary: true }],
