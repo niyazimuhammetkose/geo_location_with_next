@@ -42,6 +42,11 @@ const Navigation = ({ user }) => {
                                 Geo Locations
                             </NavLink>
                             <NavLink
+                                href="/calculate-route"
+                                active={usePathname() === '/calculate-route'}>
+                                Calculate Route
+                            </NavLink>
+                            <NavLink
                                 href="/custom-api-request"
                                 active={usePathname() === '/custom-api-request'}>
                                 Custom Api Request
@@ -125,6 +130,11 @@ const Navigation = ({ user }) => {
                             href="/geo-location"
                             active={usePathname() === '/geo-location'}>
                             Geo Locations
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            href="/calculate-route"
+                            active={usePathname() === '/calculate-route'}>
+                            Calculate Route
                         </ResponsiveNavLink>
                         <ResponsiveNavLink
                             href="/custom-api-request"

@@ -30,9 +30,12 @@ const CustomApiRequest = () => {
     const [errors, setErrors] = useState([])
     const [showSnackbar, setShowSnackbar] = useState(false)
 
-    const [endpoint, setEndpoint] = useState('/users/search')
-    const [httpMethod, setHttpMethod] = useState('GET')
-    const [params, setParams] = useState({ search: 'test' })
+    const [endpoint, setEndpoint] = useState('/geo-location/calculate-route')
+    const [httpMethod, setHttpMethod] = useState('POST')
+    const [params, setParams] = useState({
+        latitude: 40.549979,
+        longitude: 34.953722,
+    })
     const [apiInstance, setApiInstance] = useState('api_axios')
 
     const fetchDataList = async () => {
