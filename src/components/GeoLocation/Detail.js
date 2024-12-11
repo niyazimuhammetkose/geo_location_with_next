@@ -2,10 +2,13 @@
 
 import { useState, useEffect } from 'react'
 import { fetchData } from '@/services/apiService'
-import { Box, Container, Paper, Typography } from '@mui/material'
+import { Box, Container, Paper, Typography, Button } from '@mui/material'
 import ErrorAlert from '@/components/ErrorAlert'
 import { MapsComponent } from '@/components/Maps/MapsComponent'
 import DetailFieldsComponent from '@/components/GeoLocation/DetailFields'
+import EditIcon from '@mui/icons-material/Edit'
+import SkipPreviousIcon from '@mui/icons-material/SkipPrevious'
+import Link from 'next/link'
 
 const GeoLocationDetail = ({ id }) => {
     const [fetchedData, setFetchedData] = useState({})
@@ -66,6 +69,27 @@ const GeoLocationDetail = ({ id }) => {
                                 <DetailFieldsComponent
                                     fetchedData={fetchedData}
                                 />
+                            </Box>
+                            
+                            <Box
+                                display="flex"
+                                flexWrap="wrap"
+                                flexDirection="row"
+                                gap={2}>
+                                <Link href={`/geo-location/`} passHref>
+                                    <Button variant="outlined" color="primary">
+                                        <SkipPreviousIcon />
+                                    </Button>
+                                </Link>
+                                <Link
+                                    href={`/geo-location/edit/${fetchedData?.id}`}
+                                    passHref>
+                                    <Button
+                                        variant="outlined"
+                                        color="secondary">
+                                        <EditIcon />
+                                    </Button>
+                                </Link>
                             </Box>
                         </>
                     )}

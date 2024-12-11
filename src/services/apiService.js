@@ -38,3 +38,13 @@ export const postData = async (endpoint, params) => {
         throw error
     }
 }
+
+export const deleteData = async (endpoint) => {
+    try {
+        const response = await axios.delete(endpoint)
+        return response
+    } catch (error) {
+        console.error('Error deleting data:', error)
+        throw error
+    }
+}

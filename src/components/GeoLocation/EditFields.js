@@ -1,9 +1,17 @@
+'use client'
+
+import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { postData } from '@/services/apiService'
 import Link from 'next/link'
 import { Box, Button, FormGroup, TextField } from '@mui/material'
+import SkipPreviousIcon from '@mui/icons-material/SkipPrevious'
+import CancelIcon from '@mui/icons-material/Cancel'
+import CheckIcon from '@mui/icons-material/Check'
 
-const EditFieldsComponent = ({ fetchedData, id }) => {
+const EditFieldsComponent = ({ fetchedData }) => {
+    const router = useRouter()
+
     const [formData, setFormData] = useState({
         name: fetchedData?.name || '',
         latitude: fetchedData?.latitude || '',
@@ -19,9 +27,9 @@ const EditFieldsComponent = ({ fetchedData, id }) => {
     const handleSubmit = async e => {
         e.preventDefault()
         try {
-            const resp = await postData(`geo-location/update/${fetchedData?.id}`, formData)
+            await postData(`geo-location/update/${fetchedData?.id}`, formData)
 
-            console.log('response from update request:', resp)
+            router.push(`/geo-location/detail/${fetchedData?.id}`)
         } catch (error) {
             console.error('Error updating data:', error)
         }
@@ -64,14 +72,20 @@ const EditFieldsComponent = ({ fetchedData, id }) => {
                 />
             </FormGroup>
             <Box display="flex" justifyContent="space-between" mt={2}>
-                <Link href={`/geo-location/detail/${fetchedData?.id}`} passHref>
-                    <Button variant="outlined" color="secondary">
-                        Discard Changes
+                <Link href={`/geo-location/`} passHref>
+                    <Button variant="outlined" color="primary">
+                        <SkipPreviousIcon />
                     </Button>
                 </Link>
 
-                <Button type="submit" variant="contained" color="primary">
-                    Save Changes
+                <Link href={`/geo-location/detail/${fetchedData?.id}`} passHref>
+                    <Button variant="outlined" color="error">
+                        <CancelIcon />
+                    </Button>
+                </Link>
+
+                <Button type="submit" variant="outlined" color="success">
+                    <CheckIcon />
                 </Button>
             </Box>
         </Box>

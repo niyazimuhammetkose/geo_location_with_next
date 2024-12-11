@@ -1,7 +1,7 @@
+'use client'
+
 import FormatDate from '@/lib/FormatDate'
-import { Box, Button, Typography } from '@mui/material'
-import EditIcon from '@mui/icons-material/Edit'
-import Link from 'next/link'
+import { Box, Typography } from '@mui/material'
 
 const DetailFieldsComponent = ({ fetchedData }) => {
     return (
@@ -104,11 +104,6 @@ const DetailFieldsComponent = ({ fetchedData }) => {
                             '---'}
                     </Typography>
                 </Box>
-                <Link href={`/geo-location/edit/${fetchedData?.id}`} passHref>
-                    <Button variant="outlined" color="secondary">
-                        <EditIcon />
-                    </Button>
-                </Link>
             </Box>
         </>
     )
