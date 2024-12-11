@@ -8,7 +8,6 @@ import Link from 'next/link'
 // import Box from '@mui/material/Box'
 
 export const ReturnDataGridColumnsForPage = ({ pageName }) => {
-
     const DataGridColumnsForPage =
         pageName == 'UserList'
             ? [
@@ -73,22 +72,19 @@ export const ReturnDataGridColumnsForPage = ({ pageName }) => {
                         renderCell: params => (
                             <div style={{ display: 'flex', gap: '8px' }}>
                                 <Link href={`geo-location/detail/${params.id}`}>
-                                    <IconButton
-                                        color="primary">
+                                    <IconButton color="primary">
                                         <VisibilityIcon />
                                     </IconButton>
                                 </Link>
-                                
+
                                 <Link href={`geo-location/edit/${params.id}`}>
-                                    <IconButton
-                                        color="secondary">
+                                    <IconButton color="secondary">
                                         <EditIcon />
                                     </IconButton>
                                 </Link>
-                                
+
                                 <Link href={`geo-location/delete/${params.id}`}>
-                                    <IconButton
-                                        color="error">
+                                    <IconButton color="error">
                                         <DeleteIcon />
                                     </IconButton>
                                 </Link>
