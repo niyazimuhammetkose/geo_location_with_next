@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { apiRequest } from '@/utils/apiRequest'
 import { api_axios } from '@/lib/axios'
 import axios from '@/lib/axios'
 import {
@@ -41,11 +42,13 @@ const CustomApiRequest = () => {
         try {
             const selectedApiInstance =
                 apiInstance === 'api_axios' ? api_axios : axios
-            const response = await selectedApiInstance[
-                httpMethod.toLowerCase()
-            ](endpoint, {
+
+            const response = await apiRequest(
+                selectedApiInstance,
+                httpMethod,
+                endpoint,
                 params,
-            })
+            )
 
             console.log('Fetched data list:', response.data)
             setResponse(response.data) // Store the entire response
@@ -163,8 +166,11 @@ const CustomApiRequest = () => {
                                 labelId="http-method-label"
                                 value={httpMethod}
                                 onChange={e => setHttpMethod(e.target.value)}>
-                                <MenuItem value="GET">GET</MenuItem>
                                 <MenuItem value="POST">POST</MenuItem>
+                                <MenuItem value="GET">GET</MenuItem>
+                                <MenuItem value="PUT">PUT</MenuItem>
+                                <MenuItem value="PATCH">PATCH</MenuItem>
+                                <MenuItem value="DELETE">DELETE</MenuItem>
                             </Select>
                         </FormControl>
 
